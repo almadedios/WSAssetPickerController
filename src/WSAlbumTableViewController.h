@@ -23,4 +23,5 @@
 
 @interface WSAlbumTableViewController : UITableViewController
 @property (nonatomic, weak) WSAssetPickerState *assetPickerState;
+@property(nonatomic,assign)BOOL useSingleSelection;
 @end

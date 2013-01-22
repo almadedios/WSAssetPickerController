@@ -39,11 +39,17 @@
 
 #pragma mark - Initialization
 
-- (id)initWithDelegate:(id <WSAssetPickerControllerDelegate>)delegate;
+- (id)initWithDelegate:(id <WSAssetPickerControllerDelegate>)delegate{
+    return [self initWithDelegate:delegate useSingleSelection:NO];
+    
+}
+- (id)initWithDelegate:(id<WSAssetPickerControllerDelegate>)delegate useSingleSelection:(BOOL)single;
+
 {
     // Create the Album TableView Controller.
     WSAlbumTableViewController *albumTableViewController = [[WSAlbumTableViewController alloc] initWithStyle:UITableViewStylePlain];
     albumTableViewController.assetPickerState = self.assetPickerState;
+    albumTableViewController.useSingleSelection=single;
     
     if ((self = [super initWithRootViewController:albumTableViewController])) {
         
@@ -53,6 +59,10 @@
     }
     
     return self;
+}
+
+-(void) setUseSingleSelection{
+    
 }
 
 #define STATE_KEY @"state"

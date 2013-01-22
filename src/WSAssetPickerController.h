@@ -26,8 +26,11 @@
 @property (nonatomic, readonly) NSArray *selectedAssets;
 @property (nonatomic, readonly) NSUInteger selectedCount; // Observable via key-value observing.
 
+
 // Designated initializer.
 - (id)initWithDelegate:(id<WSAssetPickerControllerDelegate>)delegate;
+- (id)initWithDelegate:(id<WSAssetPickerControllerDelegate>)delegate useSingleSelection:(BOOL)single;
+
 
 @end
 

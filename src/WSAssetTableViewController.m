@@ -184,6 +184,9 @@
     
     // Update the state object's selectedAssets.
     [self.assetPickerState changeSelectionState:selected forAsset:assetWrapper.asset];
+    
+    if(self.useSingleSelection)
+        self.assetPickerState.state = WSAssetPickerStatePickingDone;
 }
 
 
